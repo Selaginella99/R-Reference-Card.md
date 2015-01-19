@@ -4,7 +4,7 @@ unique(x) if x is a vector or a data frame, returns a similar object but with th
 
 ---
 
-- strsplit(x, split, fixed = FALSE, perl = FALSE, useBytes = FALSE)
+- strsplit(vector, split, fixed = FALSE, perl = FALSE, useBytes = FALSE)
 
 Split the elements of a character vector x into substrings according to the matches to substring split within them. 
 
@@ -38,9 +38,9 @@ grep, grepl, regexpr and gregexpr search for matches to argument pattern within 
 
 The data (usually a matrix) x are written to file file. If x is a two-dimensional matrix you need to transpose it to get the columns in file the same as those in the internal representation. 
 
-- paste (..., sep = " ", collapse = NULL)
+- paste (vector, sep = " ", collapse = NULL)
 
-Concatenate vectors after converting to character. 
+sep is a string to separate terms; collapse is optional string to separate “collapsed” results.
 
 *e.g.*
 x = 'abc'
@@ -51,9 +51,18 @@ paste(x, y, sep = ','); paste(z, collapse = ',')
 
 ---
 
+- Applying functions repeatedly
+ 
+(m=matrix, a=array, l=list; v=vector, d=dataframe)
 
+apply(m,index,fun) input: m; output: a or l; applies function fun to rows/cols/cells (index) of x;
 
+lapply(l,fun) input l; output l; apply fun to *each element* of list x;
 
+sapply(l,fun) input l; output **v**; user friendly wrapper for lapply(); 
 
+tapply(l,index,fun) input l output l; applies fun to *subsets* of x, as grouped based on index;
 
+by(data,index,fun) input df; output is class “by”, wrapper for tapply.
 
+---
