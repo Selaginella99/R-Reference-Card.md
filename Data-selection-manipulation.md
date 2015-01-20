@@ -65,4 +65,6 @@ tapply(l,index,fun) input l output l; applies fun to *subsets* of x, as grouped 
 
 by(data,index,fun) input df; output is class “by”, wrapper for tapply.
 
+What You're Doing Is Rather Desperate: [A brief introduction to “apply” in R](https://nsaunders.wordpress.com/2010/08/20/a-brief-introduction-to-apply-in-r/).
+
 ---
